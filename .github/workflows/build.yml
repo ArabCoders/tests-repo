@@ -1,0 +1,21 @@
+name: Build Container Images
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  test-version:
+    name: test-version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update Version File
+        uses: ArabCoders/write-version-to-file@master
+        with:
+          filename: '${RUNNER_WORKSPACE}/.version'
+          placeholder: '${VERSION}'
