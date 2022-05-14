@@ -17,5 +17,5 @@ jobs:
       - name: Update Version File
         uses: ArabCoders/write-version-to-file@master
         with:
-          filename: '${RUNNER_WORKSPACE}/.version'
+          filename: '/.version'
           placeholder: '${VERSION}'
